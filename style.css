@@ -88,7 +88,9 @@ html{
     scroll-behavior:smooth;
 
 }
-
+html{
+    scroll-behavior: smooth;
+}
 
 body{
 
@@ -4281,5 +4283,394 @@ transition:.35s;
 .service-card:hover p{
 
 opacity:1;
+
+}
+
+
+/*==================================================
+        PREMIUM FLOATING CONTACT
+        TARIKTECH - 2026
+==================================================*/
+
+.floating-contact{
+
+position:fixed;
+
+left:30px;
+
+bottom:30px;
+
+display:flex;
+
+flex-direction:column;
+
+gap:18px;
+
+z-index:9999;
+
+opacity:0;
+
+visibility:hidden;
+
+transform:translateY(80px);
+
+transition:.6s cubic-bezier(.22,1,.36,1);
+
+}
+
+.floating-contact.show{
+
+opacity:1;
+
+visibility:visible;
+
+transform:translateY(0);
+
+}
+
+/*==============================
+        BOUTONS
+==============================*/
+
+.contact-btn{
+
+position:relative;
+
+width:72px;
+
+height:72px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border-radius:50%;
+
+overflow:hidden;
+
+text-decoration:none;
+
+color:#fff;
+
+backdrop-filter:blur(22px);
+
+-webkit-backdrop-filter:blur(22px);
+
+border:1px solid rgba(255,255,255,.18);
+
+background:rgba(255,255,255,.08);
+
+box-shadow:
+0 12px 35px rgba(0,0,0,.28),
+inset 0 1px 1px rgba(255,255,255,.25);
+
+transition:
+transform .35s ease,
+box-shadow .35s ease;
+
+}
+
+/*==============================
+      REFLET VERRE
+==============================*/
+
+.contact-btn::before{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+border-radius:50%;
+
+background:
+linear-gradient(
+145deg,
+rgba(255,255,255,.35),
+rgba(255,255,255,.02)
+);
+
+pointer-events:none;
+
+}
+
+.contact-btn::after{
+
+content:"";
+
+position:absolute;
+
+top:8px;
+
+left:12px;
+
+width:42px;
+
+height:18px;
+
+border-radius:40px;
+
+background:rgba(255,255,255,.28);
+
+filter:blur(8px);
+
+pointer-events:none;
+
+}
+
+/*==============================
+        WHATSAPP
+==============================*/
+
+.whatsapp-float{
+
+background:
+linear-gradient(
+135deg,
+rgba(37,211,102,.75),
+rgba(22,163,74,.55)
+);
+
+animation:
+whatsappGlow 2.5s infinite,
+floating 5s ease-in-out infinite;
+
+}
+
+/*==============================
+          EMAIL
+==============================*/
+
+.email-float{
+
+background:
+linear-gradient(
+135deg,
+rgba(59,130,246,.75),
+rgba(37,99,235,.55)
+);
+
+animation:
+emailGlow 2.5s infinite,
+floating 5s ease-in-out infinite;
+
+}
+
+/*==============================
+        HOVER
+==============================*/
+
+.contact-btn:hover{
+
+transform:
+translateY(-6px)
+scale(1.08);
+
+box-shadow:
+
+0 22px 55px rgba(0,0,0,.35),
+
+0 0 35px rgba(255,255,255,.12);
+
+}
+
+.contact-btn:active{
+
+transform:scale(.93);
+
+}
+
+.contact-btn svg{
+
+width:34px;
+
+height:34px;
+
+position:relative;
+
+z-index:2;
+
+}
+
+/*==============================
+        TOOLTIP
+==============================*/
+
+.contact-tooltip{
+
+position:absolute;
+
+left:92px;
+
+padding:12px 18px;
+
+border-radius:40px;
+
+background:rgba(15,23,42,.92);
+
+color:#fff;
+
+font-size:.9rem;
+
+font-weight:600;
+
+white-space:nowrap;
+
+opacity:0;
+
+transform:translateX(-15px);
+
+transition:.35s;
+
+pointer-events:none;
+
+backdrop-filter:blur(16px);
+
+-webkit-backdrop-filter:blur(16px);
+
+box-shadow:
+
+0 15px 35px rgba(0,0,0,.18);
+
+}
+
+.contact-tooltip::after{
+
+content:"";
+
+position:absolute;
+
+left:-6px;
+
+top:50%;
+
+transform:translateY(-50%);
+
+border-right:8px solid rgba(15,23,42,.92);
+
+border-top:8px solid transparent;
+
+border-bottom:8px solid transparent;
+
+}
+
+.contact-btn:hover .contact-tooltip{
+
+opacity:1;
+
+transform:translateX(0);
+
+}
+
+/*==============================
+        HALO
+==============================*/
+
+@keyframes whatsappGlow{
+
+0%{
+
+box-shadow:0 0 0 0 rgba(37,211,102,.55);
+
+}
+
+70%{
+
+box-shadow:0 0 0 24px rgba(37,211,102,0);
+
+}
+
+100%{
+
+box-shadow:0 0 0 0 rgba(37,211,102,0);
+
+}
+
+}
+
+@keyframes emailGlow{
+
+0%{
+
+box-shadow:0 0 0 0 rgba(59,130,246,.55);
+
+}
+
+70%{
+
+box-shadow:0 0 0 24px rgba(59,130,246,0);
+
+}
+
+100%{
+
+box-shadow:0 0 0 0 rgba(59,130,246,0);
+
+}
+
+}
+
+@keyframes floating{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-6px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+/*==============================
+        MOBILE
+==============================*/
+
+@media(max-width:768px){
+
+.floating-contact{
+
+left:18px;
+
+bottom:18px;
+
+gap:14px;
+
+}
+
+.contact-btn{
+
+width:62px;
+
+height:62px;
+
+}
+
+.contact-btn svg{
+
+width:28px;
+
+height:28px;
+
+}
+
+.contact-tooltip{
+
+display:none;
+
+}
 
 }

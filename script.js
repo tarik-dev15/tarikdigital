@@ -810,3 +810,16 @@ if (contactForm) {
 if (window.lucide) {
   lucide.createIcons();
 }
+/*====================================
+    FLOATING CONTACT
+====================================*/
+
+const floatingContact = document.querySelector(".floating-contact");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 250) {
+    floatingContact.classList.add("show");
+  } else {
+    floatingContact.classList.remove("show");
+  }
+});
