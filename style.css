@@ -1451,7 +1451,7 @@ header{
 
     
 
-    animation: heroFloat 10s ease-in-out infinite;
+    animation: heroFloat 7s ease-in-out infinite;
 
 
 }
@@ -1508,17 +1508,13 @@ header{
     max-width:500px;
 
 
-    opacity:.9;
+    opacity:.8;
 
 
     object-fit:contain;
 
 
 }
-
-
-
-
 
 .hero-shadow{
 
@@ -1542,12 +1538,12 @@ header{
 
     rgba(124,92,255,.5),
 
-    transparent 70%
+    transparent 60%
 
     );
 
 
-    filter:blur(35px);
+    filter:blur(50px);
 
 
 }
